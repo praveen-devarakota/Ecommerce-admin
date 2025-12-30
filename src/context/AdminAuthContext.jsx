@@ -29,7 +29,7 @@ export function AdminAuthProvider({ children }) {
 
   const login = async ({ email, password }) => {
     try {
-      const res = await axios.post('http://localhost:5001/api/users/login', {
+      const res = await axios.post('https://ecommerce-backend-yj8d.onrender.com/api/users/login', {
         email,
         password,
       });

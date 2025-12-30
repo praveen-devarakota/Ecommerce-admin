@@ -36,7 +36,7 @@ const handleLogout = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/admin/users', config);
+      const res = await axios.get('https://ecommerce-backend-yj8d.onrender.com/api/admin/users', config);
       const data = Array.isArray(res.data) ? res.data : res.data.users || [];
       setUsers(data);
     } catch (err) {
@@ -47,7 +47,7 @@ const handleLogout = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/admin/products', config);
+      const res = await axios.get('https://ecommerce-backend-yj8d.onrender.com/api/admin/products', config);
       const data = Array.isArray(res.data) ? res.data : res.data.products || [];
       setProducts(data);
     } catch (err) {
@@ -59,7 +59,7 @@ const handleLogout = () => {
   const toggleUserStatus = async (userId, currentStatus) => {
     try {
       await axios.put(
-        `http://localhost:5001/api/admin/users/${userId}`,
+        `https://ecommerce-backend-yj8d.onrender.com/api/admin/users/${userId}`,
         { active: !currentStatus },
         config
       );
@@ -72,7 +72,7 @@ const handleLogout = () => {
   const toggleProductAvailability = async (productId, currentStatus) => {
     try {
       await axios.put(
-        `http://localhost:5001/api/admin/products/${productId}`,
+        `https://ecommerce-backend-yj8d.onrender.com/api/admin/products/${productId}`,
         { available: !currentStatus },
         config
       );
@@ -111,7 +111,7 @@ const handleLogout = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/products", {
+      const response = await axios.post("https://ecommerce-backend-yj8d.onrender.com/api/products", {
         name,
         price: Number(price),
         image,
